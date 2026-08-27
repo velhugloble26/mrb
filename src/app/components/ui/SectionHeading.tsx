@@ -36,14 +36,14 @@ export function SectionHeading({
           <span className="h-px w-12 bg-champagne-gold/60" />
         </div>
       )}
-      <h2
+      <h1
         className={cn(
-          "font-display text-display-md font-medium leading-tight",
+          "font-display text-display-md font-medium leading-tight text-6xl",
           light ? "text-charcoal" : "text-marble-ivory"
         )}
       >
         {title}
-      </h2>
+      </h1>
       {subtitle && (
         <p
           className={cn(
