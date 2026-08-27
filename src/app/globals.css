@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-deep-black text-marble-ivory font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    @apply bg-champagne-gold/30 text-marble-ivory;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-deep-black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-champagne-gold/40 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-champagne-gold/60;
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-champagne-gold via-light-gold to-champagne-gold bg-clip-text text-transparent;
+  }
+
+  .border-gold-thin {
+    @apply border border-champagne-gold/30;
+  }
+
+  .border-gold {
+    @apply border border-champagne-gold/50;
+  }
+
+  .glass-luxury {
+    @apply bg-charcoal/40 backdrop-blur-xl border border-white/5;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-400 ease-luxury hover:-translate-y-1 hover:shadow-elevated;
+  }
+
+  .image-zoom {
+    @apply overflow-hidden;
+  }
+
+  .image-zoom img {
+    @apply transition-transform duration-800 ease-luxury;
+  }
+
+  .image-zoom:hover img {
+    @apply scale-105;
+  }
+
+  .gold-underline {
+    @apply relative;
+  }
+
+  .gold-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-champagne-gold transition-all duration-600 ease-luxury;
+  }
+
+  .gold-underline:hover::after {
+    @apply w-full;
+  }
+
+  .marble-texture {
+    background-image: 
+      radial-gradient(ellipse at 20% 30%, rgba(181, 138, 69, 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 70%, rgba(181, 138, 69, 0.02) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(212, 175, 104, 0.01) 0%, transparent 70%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
